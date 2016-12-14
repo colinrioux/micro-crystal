@@ -1,17 +1,17 @@
 VERSION = "1.0.0"
 
 
-if GetOption("crystal format") == nil then
-    AddOption("crystal format", false)
+if GetOption("crystalfmt") == nil then
+    AddOption("crystalfmt", false)
 end
 
-MakeCommand("crystal", "crystal.crystal", 0)
+MakeCommand("crystal", "crystal.format", 0)
 
 -- TODO [] Set default tab size for .cr files to 2
 
 function onSave(view)
     if CurView().Buf:FileType() == "crystal" then
-        if GetOption("crystal format") then
+        if GetOption("crystalfmt") then
           format()
         end
     end
@@ -21,7 +21,9 @@ function format()
     local ft = CurView().Buf:FileType()
     local file = CurView().Buf.Path
     CurView():Save(false)
-    JobStart("crystal tool format " .. file, "", "", "")
-    CurView():ReOpen()
-    
+    JobSpawn("crystal", {"tool", "format", file}, "", "", "crystal.onExit")
+end
+
+function onExit()
+  CurView().Buf:ReOpen()
 end
