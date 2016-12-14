@@ -80,7 +80,6 @@ function string.starts(str,start)
     return string.sub(str, 1, string.len(start)) == start
 end
 
-MakeCommand("crystaleval", "crystal.eval", 0)
 MakeCommand("crystal", "crystal.crystal", 0)
 
 AddRuntimeFile("crystal", "help", "help/crystal-plugin.md")
