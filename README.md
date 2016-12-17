@@ -1,4 +1,4 @@
 # micro-crystal
-A bunch of popular Crystal-language tools for micro.
+Various crystal tools for micro.
 
 Install with `> plugin install crystal`.
