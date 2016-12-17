@@ -22,8 +22,6 @@ end
 function crystal(a)
   local ft = CurView().Buf:FileType()
   local file = CurView().Buf.Path
-  -- local args = {}
-  -- for word in a:gmatch("%w+") do table.insert(args, word) end
   if a == "version" or a == "--version" or a == "-v" then
     version(args)
   elseif a == "format" then
