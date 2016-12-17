@@ -1,13 +1,14 @@
 VERSION = "1.0.0"
 
--- TODO Document that crystalfmt is an option that can have crystal format
--- on save
 if GetOption("crystalfmt") == nil then
     AddOption("crystalfmt", true)
 end
 
 function onViewOpen(view)
-  SetLocalOption("tabsize", "2", view)
+  -- Set tabsize by default for crystal files to 2
+  if CurView().Buf:FileType() == "crystal" then
+    SetLocalOption("tabsize", "2", view)
+  end
 end
 
 function onSave(view)

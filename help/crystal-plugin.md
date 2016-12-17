@@ -12,6 +12,6 @@ There are a few features of this plugin that makes developing / debugging in mic
 
 Options:
 * `crystalfmt`, default: `On`
-If set to `true`, `crystal format` is run on each save. 
+If set to `true`, `crystal format` is run on each save.
 
-This plugin also sets the local default tab size to 2 for convenience.
+This plugin also sets the local crystal default tab size to 2 for convenience.
