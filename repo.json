@@ -5,7 +5,7 @@
   "Versions": [
     {
       "Version": "1.0.0",
-      "Url": "https://github.com/ColinRioux/micro-crystal/archive/1.0.0.zip",
+      "Url": "https://github.com/ColinRioux/micro-crystal/archive/DEV.zip",
       "Require": {
         "micro": ">=1.0.3"
       }
